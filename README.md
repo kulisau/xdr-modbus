@@ -3,7 +3,7 @@
 [![CI](https://github.com/kulisau/xdr-modbus/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/kulisau/xdr-modbus/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/xdr-modbus)](https://pypi.org/project/xdr-modbus/)
 [![Python versions](https://img.shields.io/pypi/pyversions/xdr-modbus)](https://pypi.org/project/xdr-modbus/)
-[![License](https://img.shields.io/github/license/kulisau/xdr-modbus)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/kulisau/xdr-modbus/blob/main/LICENSE)
 
 `xdr-modbus` is an async Python device library for the
 [Mean Well XDR series](https://www.meanwell.com) of DIN-rail power supplies
@@ -103,4 +103,4 @@ script/run_checks.sh   # format check, lint, compile, tests, package build
 
 ## License
 
-[Apache-2.0](LICENSE)
+[Apache-2.0](https://github.com/kulisau/xdr-modbus/blob/main/LICENSE)
