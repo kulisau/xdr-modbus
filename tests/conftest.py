@@ -76,9 +76,9 @@ HOLDING.update(
         142: 0xFFFF,  # no MCU 5-6
         **_ascii_words("251201", 148),  # info.serial_number (first half)
         **_ascii_words("000001", 151),  # info.serial_number (second half)
-        192: 0x55,  # scaling: VOUT 0.01, IOUT 0.01
-        193: 0x06,  # scaling: VIN 0.1
-        194: 0x06,  # scaling: temperature 0.1
+        192: 0x5506,  # scaling: VOUT 0x5=0.01, IOUT 0x5=0.01, VIN 0x6=0.1
+        193: 0x0600,  # scaling: temperature 0x6=0.1
+        194: 0x0000,  # scaling: reserved
     }
 )
 
