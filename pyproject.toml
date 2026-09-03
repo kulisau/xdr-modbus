@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xdr-modbus"
+version = "0.0.0"
+description = "Read and control a Mean Well XDR series power supply over Modbus."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+authors = [{ name = "XDR Modbus contributors" }]
+keywords = ["modbus", "mean-well", "xdr", "power-supply"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Home Automation",
+]
+# Protocol + the device-modelling framework (modbus_connection.model). The caller
+# injects a ModbusUnit built from whichever backend they choose.
+dependencies = ["modbus-connection>=4.8.1,<5"]
+
+[project.optional-dependencies]
+# Concrete backend for the script/query.py CLI (pip install xdr-modbus[cli]).
+cli = ["modbus-connection[tmodbus]>=4.8.1,<5"]
+
+[project.urls]
+Homepage = "https://github.com/kulisau/xdr-modbus"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.24",
+    # Tests run against the in-memory mock backend that ships with
+    # modbus-connection (its pytest plugin is auto-registered); no real backend
+    # or server is needed.
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/xdr_modbus"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true

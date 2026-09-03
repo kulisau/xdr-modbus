@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+uv.lock
+
+# ignore local-only files (eg developer mode switch)
+**/_local_dev_overrides/
